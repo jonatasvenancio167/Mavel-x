@@ -1,0 +1,36 @@
+.navbar{
+    background-color: var(--black);
+    padding: 1rem 3rem;
+    width: 100%;
+
+    display: flex;
+}
+
+.search{
+    position: relative;
+    display: flex;
+    margin-left: auto;
+
+    border: 1px solid var(--daredevil);
+    width: 15rem;
+    height: 2.5rem;
+    border-radius: 5px;
+
+    margin-top: 1rem;
+}
+
+input::placeholder{
+    color: var(--daredevil);
+    position: relative;
+    left: 1rem;
+}
+
+input:focus{
+    color: var(--daredevil);
+    border-color: var(--daredevil);
+    box-shadow: 0 0 0 0.2rem var(--daredevil);
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--daredevil) !important;
+}

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --daredevil: #ED1D24;
+    --black: #202020;
+    --white: #fff;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Marvel', sans-serif;
+    font-weight: 700;
+}
+
+p{
+    font-family: 'Marvel', sans-serif;
+}
+
+@media (max-width: 1080px){
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 1366px){
+    html {
+        font-size: 80%;
+    }
+}
+
+@media (max-width: 720px){
+    html {
+        font-size: 87.5%;
+    }
+}
