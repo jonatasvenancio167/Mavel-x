@@ -1,5 +1,9 @@
 import{ useState, useEffect } from 'react'
 
+//<sumary>
+//    Crio uma função ao qual ele vai simular uma máquina de escrever. Ele recebe todos os caracteres recebido no meu welcomeComponents e exibi caractere por caractere para o usuário
+//</sumary>
+
 export default function TypeWrite(props){
     const[phrase, setPhrase] = useState('')
 

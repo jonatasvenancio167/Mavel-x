@@ -3,7 +3,7 @@
 </div>
 <p align='center'>Um site desenvolvido para os fãs da marvel</p>
 
-<img src="public/tela_inicial.gif">
+<img src="public/demonstracao.gif">
 
 ## 🛠 Tecnologias | Dependências
 

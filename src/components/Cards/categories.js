@@ -9,7 +9,15 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
+//<sumary>
+//    Constante que tem como função criar os cards com os dados retornados pela api através o item.
+//</sumary>
+
 const Categories = ({item}) => {
+    //<sumary>
+    //    Capturo o id selecionado através do button que faço no card, fazendo com quer ele renderiza a próxima pagina com os dados do id selecionado.   
+    //</sumary>
+
     const id = `/descricao/${item.id}`
 
     return(

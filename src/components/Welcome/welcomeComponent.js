@@ -3,6 +3,10 @@ import TypeWrite from '../TypeWriter/index'
 import styles from './WelcomeComponent.module.css'
 
 export default function WelcomeComponent(){
+
+    //<sumary>
+    //    Eu retorno a tela de boas vindas para o usuário passando a minha função typewrite para simular um efeito de máquina de escrever.
+    //</sumary>
     
     return(
         <>
