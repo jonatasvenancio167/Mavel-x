@@ -1,14 +1,13 @@
 .imageWallpaper{
     position: relative;
     width: 50%;
-    
 }
 
 .history{
     position: relative;
     padding: 4rem;
-
-   align-items: flex-end;
+    display: grid;
+    align-items: center;
 }
 
 .titleHistory{

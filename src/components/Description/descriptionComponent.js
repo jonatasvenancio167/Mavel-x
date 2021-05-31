@@ -6,8 +6,6 @@ import { useFetch } from '../../hooks/api'
 import styles from './DescriptionComponent.module.css'
 import Slider from "react-slick"
 
-
-
 const publicKey = '29e3f9f7da374acf397275c7cbd2c2c2'
 const privateKey = '1b45397d2d3e4442998ad48676ec2f152306317e'
 
@@ -77,13 +75,6 @@ export default function DescriptionComponent(){
                         </tbody>
                     </table>
                 </section>
-            </div>
-
-            <div className={styles.comics}>
-                <h1 className={styles.borderComics}>Comics</h1>
-                <Slider>
-                   
-                </Slider>
             </div>
         </>
     )
