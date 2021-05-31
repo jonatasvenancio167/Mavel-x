@@ -1,7 +1,7 @@
 <div align='center'>
-    <img src='public/marvel_Logo.png' width='60%'>
+    <img src='public/marvel_Logo.png' width='50%'>
 </div>
-<p>Um site desenvolvido para os fãs da marvel</p>
+<p align='center'>Um site desenvolvido para os fãs da marvel</p>
 
 <img src="public/tela_inicial.gif">
 
