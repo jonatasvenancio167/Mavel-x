@@ -15,19 +15,21 @@ const Categories = ({item}) => {
     return(
         <>
             <Card>
-                <CardActionArea>
-                    <CardMedia
-                        component="img"
-                        height="140"
-                        image={`${item.thumbnail.path}/portrait_fantastic.jpg`}
-                        title={item.title}
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {item.title}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
+                <Link to={id}>
+                    <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            height="140"
+                            image={`${item.thumbnail.path}/portrait_fantastic.jpg`}
+                            title={item.title}
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="h2" className={styles.typography}>
+                                {item.title}
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                </Link>
                 <CardActions>
                     <Link to={id}>
                         <button className={styles.view}>Visualizar perfil</button>

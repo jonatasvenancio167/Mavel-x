@@ -17,13 +17,15 @@
 
 <h3>Dependências</h3>
 
+✔️ md5 <br>
+✔️ swr <br>
 ✔️ Axios <br>
 ✔️ date-fns <br>
-✔️ md5 <br>
 ✔️ react-router-dom <br>
 ✔️ react-slick <br>
-✔️ swr <br>
 ✔️ @material-ui/core <br>
+✔️ react-loader-spinner <br>
+✔️ react-animate-on-scroll <br>
 
 ## <h4 align="center"> 
     🚧 Marvel-x 🚀 em construção... 🚧 
@@ -48,9 +50,13 @@ $ git clone https://github.com/jonatasvenancio167/marvel-x.git
 
 $ cd marvel-x
 
-## instale as dependencias 
+## instale as dependencias yarn
 
 $ yarn install
+
+## instale as dependencias npm
+
+$ npm install
 
 ## execute a aplicação em modo de desenvolvimento 
 

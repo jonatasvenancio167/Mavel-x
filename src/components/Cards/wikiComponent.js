@@ -1,8 +1,8 @@
-import styles from './WikiComponent.module.css'
-import Card from './card'
 import md5 from 'md5'
-import slick_setting from './slick_setting'
-import Slider from "react-slick"
+import Card from './card'
+import Loader from "react-loader-spinner";
+import styles from './WikiComponent.module.css'
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import { useFetch } from '../../hooks/api'
 
@@ -20,7 +20,16 @@ export default function WikiComponent(){
     const { data } = useFetch(`${baseUrl}?ts=${time}&apikey=${publicKey}&hash=${hash}`)
 
     if(!data){
-        return <p>Carregando...</p>
+        return(
+            <Loader
+            type="TailSpin"
+            color="#202020"
+            height={50}
+            width={50}
+            timeout={3000}
+            className={styles.spinner}
+          />
+        )
     }
 
     return(
@@ -28,9 +37,9 @@ export default function WikiComponent(){
             <div className={styles.title}>
                 <h1 className={styles.title}>Personagens</h1>
             </div>
-            <Slider {...slick_setting} className={styles.container}>
+            <ScrollAnimation animateIn='fadeIn'>
                 <Card items={data} />
-            </Slider>
+            </ScrollAnimation>
         </>
     )
 }
