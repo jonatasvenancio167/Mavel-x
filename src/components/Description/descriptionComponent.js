@@ -4,6 +4,8 @@ import md5 from 'md5'
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../../hooks/api'
 import styles from './DescriptionComponent.module.css'
+import Slider from "react-slick"
+
 
 
 const publicKey = '29e3f9f7da374acf397275c7cbd2c2c2'
@@ -18,11 +20,10 @@ export default function DescriptionComponent(){
     const { id } = useParams()
     const { data } = useFetch(`/${id}?ts=${time}&apikey=${publicKey}&hash=${hash}`)
 
-    console.log(data)
     if(!data){
         <p>Carregando...</p>
     }
-    
+    console.log(data)
     return(
         <>
             <div className={styles.history}>
@@ -30,6 +31,9 @@ export default function DescriptionComponent(){
                     item => <h1 key={item.id} item={item} className={styles.titleHistory}> 
                         { item.title } 
                     </h1>
+                )}
+                {data?.map(
+                    item => <img key={item.id} item={item} src={`${item.thumbnail.path}/landscape_amazing.jpg`} className={styles.imageWallpaper} /> 
                 )}
             </div>
             <div className={styles.background}>
@@ -77,6 +81,9 @@ export default function DescriptionComponent(){
 
             <div className={styles.comics}>
                 <h1 className={styles.borderComics}>Comics</h1>
+                <Slider>
+                   
+                </Slider>
             </div>
         </>
     )

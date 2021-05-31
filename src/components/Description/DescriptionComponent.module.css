@@ -1,3 +1,9 @@
+.imageWallpaper{
+    position: relative;
+    width: 50%;
+    
+}
+
 .history{
     position: relative;
     padding: 4rem;
