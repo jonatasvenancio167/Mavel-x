@@ -9,38 +9,19 @@
     color: var(--black);
 }
 
-.inline{
-    position: relative;
-    justify-content: space-between;
-
-    display: flex;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px ;
-}
-
 .container{
+    display: grid;
+    margin: 10px auto 30px;
+    grid-template-columns: repeat(3 , 1fr);
+
+    background-color: yellow;
+}
+
+.grid{
     position: relative;
-    margin-top: 2rem;
+    display: grid;
     left: 2rem;
-
-    width: 30%;
-}
-
-
-.imgSize{
-    width: 100%;
-    margin-bottom: -0.4rem;
-}
-
-.border{
-    border-bottom: 0.5rem solid var(--daredevil);
-}
-
-.body{
-    padding: 2px 1rem;
-
-    color: var(--white);
-    background-color: var(--black);
+    gap: 20px;
 }
 
 h5{
@@ -50,11 +31,10 @@ h5{
 
 .view{
     position: relative;
-    display: flexbox;
 
     margin-top: 3rem;
     margin-bottom: 1rem;
-
+ 
     background-color: var(--daredevil);
     padding: 0.8rem;
     color: var(--white);

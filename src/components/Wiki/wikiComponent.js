@@ -1,11 +1,10 @@
 import styles from './WikiComponent.module.css'
 import Card from './card'
-import axios from 'axios'
 import md5 from 'md5'
+import slick_setting from './slick_setting'
+import Slider from "react-slick"
 
-import Slide from 'react-slick'
-
-import { useEffect, useState } from 'react'
+import { useFetch } from '../../services/Api'
 
 const baseUrl = 'http://gateway.marvel.com/v1/public/creators/32/comics'
 
@@ -18,38 +17,20 @@ const hash = md5(time + privateKey + publicKey)
 
 export default function WikiComponent(){
 
-    const settings = {
-        className: "slider variable-width",
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        variableWidth: true
+    const { data } = useFetch(`${baseUrl}?ts=${time}&apikey=${publicKey}&hash=${hash}`)
+
+    if(!data){
+        return <p>Carregando...</p>
     }
-
-    const[items, setItems] = useState([])
-    const[isLoanding, setIsLoading] = useState(true)
-
-    useEffect(() => {
-        const fetch = async() => {
-            const result = await axios((`${baseUrl}?ts=${time}&apikey=${publicKey}&hash=${hash}`))
-            console.log(result.data)
-            setItems(result.data.data.results)
-            setIsLoading(false)
-        }
-
-        fetch()
-    },[])
 
     return(
         <>
             <div className={styles.title}>
                 <h1 className={styles.title}>Personagens</h1>
             </div>
-            <Slide {...settings} className={styles.container}>
-                <Card items={items} isLoanding={isLoanding} />
-            </Slide>
+            <Slider {...slick_setting} className={styles.container}>
+                <Card items={data} />
+            </Slider>
         </>
     )
 }

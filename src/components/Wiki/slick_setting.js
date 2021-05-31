@@ -1,4 +1,4 @@
-export default {
+export default{
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 4,

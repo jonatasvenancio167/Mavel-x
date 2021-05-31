@@ -1,0 +1,112 @@
+.history{
+    position: relative;
+    padding: 4rem;
+
+   align-items: flex-end;
+}
+
+.titleHistory{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--black);
+    width: 50%;
+}
+
+.paragraphHistory{
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--black);
+    font-size: 1.2rem;
+
+    text-align: justify;
+}
+
+.background{
+    position: relative;
+
+    margin: 0;
+
+    background-color: #8A0616;
+    padding: 8rem;
+    color: var(--white);
+}
+
+.border{
+    position: relative;
+    right: 3rem;
+
+    border-bottom: 1px solid var(--white);
+    width: 40%;
+}
+
+.format{
+    position: relative;
+    right: 3rem;
+
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+
+    width: 50%;
+}   
+
+.tableFormat{
+    position: relative;
+    margin-top: 2.188rem;
+}
+
+.titleCuriosity{
+    text-align: center;
+
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom: 1px solid var(--black);
+}
+
+table{
+    position: relative;
+
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 90%;
+
+}
+
+th,td{
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+td{
+    float: right;
+}
+
+th{
+    color: var(--black);
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.comics{
+    color: var(--white);
+    background-color: var(--black);
+
+    padding: 8rem;
+
+    margin: 0;
+}
+
+.borderComics{
+    border-bottom: 1px solid var(--white);
+    width: 40%;
+}
