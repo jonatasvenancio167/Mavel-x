@@ -1,15 +1,44 @@
+import { parseISO, format } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+import md5 from 'md5'
+import { useParams } from 'react-router-dom'
+import { useFetch } from '../../hooks/api'
 import styles from './DescriptionComponent.module.css'
 
+
+const publicKey = '29e3f9f7da374acf397275c7cbd2c2c2'
+const privateKey = '1b45397d2d3e4442998ad48676ec2f152306317e'
+
+const time = Number(new Date())
+
+const hash = md5(time + privateKey + publicKey)
+
 export default function DescriptionComponent(){
+
+    const { id } = useParams()
+    const { data } = useFetch(`/${id}?ts=${time}&apikey=${publicKey}&hash=${hash}`)
+
+    console.log(data)
+    if(!data){
+        <p>Carregando...</p>
+    }
+    
     return(
         <>
             <div className={styles.history}>
-                <h1 className={styles.titleHistory}>História</h1>
-                <p className={styles.paragraphHistory}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna fermentum iaculis eu non diam phasellus. Velit dignissim sodales ut eu sem integer. Urna nunc id cursus metus aliquam eleifend mi in nulla. Sit amet purus gravida quis. At elementum eu facilisis sed odio. Tellus mauris a diam maecenas. Nunc eget lorem dolor sed viverra ipsum. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est. Tellus pellentesque eu tincidunt tortor aliquam nulla. Vitae elementum curabitur vitae nunc. Mi quis hendrerit dolor magna.</p>
+                {data?.map(
+                    item => <h1 key={item.id} item={item} className={styles.titleHistory}> 
+                        { item.title } 
+                    </h1>
+                )}
             </div>
             <div className={styles.background}>
-                <h1 className={styles.border}>Caracteristica</h1>
-                <p className={styles.format}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam quam nulla porttitor massa id neque aliquam vestibulum. Nullam ac tortor vitae purus faucibus. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Viverra accumsan in nisl nisi scelerisque eu. Tempus imperdiet nulla malesuada pellentesque elit. Lacus laoreet non curabitur gravida arcu ac tortor dignissim </p>
+                <h1 className={styles.border}>Descrição</h1>
+                {data?.map(
+                    item => <p key={item.id} item={item} className={styles.paragraphFeature}> 
+                        { item.description } 
+                    </p>
+                )}
             </div>
             <div className={styles.tableFormat}>
                 <h1 className={styles.titleCuriosity}>Curiosidades</h1>
@@ -22,12 +51,24 @@ export default function DescriptionComponent(){
                                 <td>Morto</td>
                             </tr>
                             <tr>
-                                <th>Criador</th>
-                                <td>Stan Lee</td>
+                                <th>Inicio</th>
+                                {data?.map(
+                                    item => <td key={item.id} item={item}> 
+                                        {
+                                            item.start ? format(parseISO(item.start), 'd MMM yyy', {locale: ptBR}) : 'Dado não fornecido'
+                                        }
+                                    </td>
+                                )}
                             </tr>
                             <tr>
-                                <th>Primeira aparição</th>
-                                <td>15/06/1999</td>
+                                <th>Fim</th>
+                                {data?.map(
+                                    item => <td key={item.id} item={item}>
+                                        { 
+                                            item.end ? format(parseISO(item.end), 'd MMM yyy', {locale: ptBR}) : 'Dado não fornecido'
+                                        } 
+                                    </td>
+                                )}
                             </tr>
                         </tbody>
                     </table>

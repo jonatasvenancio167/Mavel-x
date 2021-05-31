@@ -13,8 +13,6 @@
     display: grid;
     margin: 10px auto 30px;
     grid-template-columns: repeat(3 , 1fr);
-
-    background-color: yellow;
 }
 
 .grid{

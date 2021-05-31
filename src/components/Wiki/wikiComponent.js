@@ -4,9 +4,9 @@ import md5 from 'md5'
 import slick_setting from './slick_setting'
 import Slider from "react-slick"
 
-import { useFetch } from '../../services/Api'
+import { useFetch } from '../../hooks/api'
 
-const baseUrl = 'http://gateway.marvel.com/v1/public/creators/32/comics'
+const baseUrl = 'http://gateway.marvel.com/v1/public/events'
 
 const publicKey = '29e3f9f7da374acf397275c7cbd2c2c2'
 const privateKey = '1b45397d2d3e4442998ad48676ec2f152306317e'
